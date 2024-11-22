@@ -1,0 +1,183 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    transition: all 0.3s;
+    font-family: "Roboto", sans-serif;
+}
+body {
+    margin: 0;
+}
+
+.toggle-theme {
+    background-color: rgb(27, 23, 23);
+    color: white;
+}
+
+nav {
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding-inline: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: white;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 50px;
+}
+
+.logo p {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.nav-buttons button {
+    font-size: 18px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background-color: cadetblue;
+    border: none;
+    cursor: pointer;
+    transition: all .1s;
+}
+.btn-searching {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+
+.nav-buttons select {
+    padding: 5px 12px;
+    border-radius: 8px;
+    background-color: inherit;
+    border: 2px solid cadetblue;
+    color: cadetblue;
+    font-size: 16px;
+    outline: none;
+}
+
+select option {
+    color: black;
+}
+
+#container {
+    width: 1000px;
+    height: auto;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 30px;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+    overflow-y: hidden;
+}
+
+.image-container {
+    overflow: hidden;
+}
+.image-container img {
+    transition: all 1s;
+}
+
+.card:hover .image-container img {
+    scale: 1.2;
+}
+
+.info-container {
+    padding-inline: 10px;
+}
+
+
+.loader {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 3px solid;
+    margin: auto;
+    border-color: white white white cadetblue;
+    animation: loadingSpinner 1s linear infinite;
+}
+
+.container-loading {
+    text-align: center;
+    font-size: 50px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+@keyframes loadingSpinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width:1100px) {    
+    #container {
+        width: 700px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px 20px;
+    }
+
+    .card {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:760px) {
+    nav {
+        padding-inline: 25px;
+    }
+    #container {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
+    }
+
+    .nav-buttons {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width:520px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        gap: 20px;
+        padding-block: 10px;
+    }
+
+    .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-inline: 20px;
+    }
+
+    .nav-buttons button {
+        font-size: 16px;
+        padding: 3px 12px;
+    }
+    
+    .nav-buttons select {
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .container-loading {
+        font-size: 30px;
+    }
+}
